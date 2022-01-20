@@ -23,6 +23,23 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
             </list>
         </property>
     </bean>-->
-    <mvc:annotation-driven/>
+    <!--mvc的注解驱动-->
+    <mvc:annotation-driven conversion-service="ConversionService"/>
+    <!--开发资源访问-->
     <mvc:default-servlet-handler/>
+
+    <!--声明转换器-->
+    <bean id="ConversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="com.itcast.converter.DateConverter"></bean>
+            </list>
+        </property>
+    </bean>
+
+    <!--配置文件上传的解析器-->
+    <bean id="MultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="500000"/>
+    </bean>
 </beans>

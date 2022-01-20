@@ -209,3 +209,35 @@
 ![image-20220118204412391](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220118204412391.png)
 
 ![image-20220118213726167](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220118213726167.png)
+
+**解决中文乱码问题**
+
+```xml
+<!--配置全局过滤的filter-->
+<filter>
+  <filter-name>CharacterEncodingFilter</filter-name>
+  <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+  <init-param>
+    <param-name>encoding</param-name>
+    <param-value>UTF-8</param-value>
+  </init-param>
+</filter>
+<filter-mapping>
+  <filter-name>CharacterEncodingFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+
+![image-20220119210536137](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220119210536137.png)
+
+![image-20220119210720889](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220119210720889.png)
+
+# SpringMVC文件上传
+
+![image-20220120080750975](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220120080750975.png)
+
+![image-20220120081020972](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220120081020972.png)
+
+![image-20220120081156264](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220120081156264.png)
+
+![image-20220120081204341](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220120081204341.png)
