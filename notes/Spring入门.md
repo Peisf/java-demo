@@ -241,3 +241,46 @@
 ![image-20220120081156264](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220120081156264.png)
 
 ![image-20220120081204341](C:\Users\Peisf\AppData\Roaming\Typora\typora-user-images\image-20220120081204341.png)
+
+
+
+# Spring JdbcTemplate基本使用
+
+1.导入spring-jdbc和spring-tx坐标
+
+2.创建数据库表和实体
+
+3.创建jdbcTemplate对象
+
+```
+JdbcTemplate jdbcTemplate = new JdbcTemplate();
+// 设置数据源对象， 知道数据库在哪
+jdbcTemplate.setDataSource(dataSource);
+```
+
+4.执行数据库操作
+
+​	更新操作：jdbcTemplate.update(sql,params)
+
+​	查询操作：
+​		jdbcTemplate.query(sql,Mapper,params) ;
+
+​		 jdbcTemplate.queryForObject(sql,Mapper,params)
+
+
+
+# Spring环境搭建
+
+​	1.创建功能（Project&Module）
+
+​	2.导入静态页面
+
+​	3.导入需要坐标
+
+​	4.创建包解构
+
+​	5.导入数据库脚本
+
+​	6.创建POJO类
+
+​	7.创建配置文件

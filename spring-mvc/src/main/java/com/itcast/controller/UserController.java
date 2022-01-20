@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -108,8 +110,8 @@ public class UserController {
     public void save11(String username, MultipartFile uploadFile) throws IOException {
         System.out.println(username);
         System.out.println(uploadFile);
-//        String filename = uploadFile.getOriginalFilename();
-//        uploadFile.transferTo(new File("E:\\workspace\\java-notes\\upload" + filename));
+        String filename = uploadFile.getOriginalFilename();
+        uploadFile.transferTo(new File("E:\\workspace\\java-notes\\upload\\" + filename));
 
 
     }
