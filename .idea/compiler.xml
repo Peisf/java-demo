@@ -10,9 +10,11 @@
         <module name="spring-test" />
         <module name="spring-mvc" />
         <module name="spring-jdbc" />
+        <module name="spring-interceptor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-interceptor" target="1.7" />
       <module name="spring-ioc" target="11" />
       <module name="spring-ioc-anno" target="11" />
       <module name="spring-jdbc" target="11" />
