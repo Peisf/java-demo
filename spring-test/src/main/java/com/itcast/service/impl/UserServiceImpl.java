@@ -50,4 +50,10 @@ public class UserServiceImpl implements UserService {
         //2.删除sys_user表的数据
         userDao.del(userId);
     }
+
+    @Override
+    public User login(String username, String password) {
+        User user = userDao.findByUsernameAndPassword(username,password);
+        return user;
+    }
 }

@@ -26,7 +26,19 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/user/login"/>
             <bean class="com.itcast.interceptor.PrivilegeInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <!--配置简单映射异常处理器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="defaultErrorView" value="error"/>
+        <property name="exceptionMappings">
+            <map>
+                <entry key="com.itcast.exception.MyException" value="error"/>
+                <entry key="java.lang.ClassCastException" value="error"/>
+            </map>
+        </property>
+    </bean>
 </beans>
